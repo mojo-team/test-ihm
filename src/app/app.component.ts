@@ -41,4 +41,13 @@ export class AppComponent {
     this.items.push({message: desc});
     this.msgVal = '';
   }
+
+  donneLUtilisateur(){
+    if (this.afAuth.auth!=null){
+      return 'toi';
+    }else{
+      return this.afAuth.auth.currentUser.displayName;
+    }
+
+  }
 }
