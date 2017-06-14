@@ -1,2 +1,61 @@
-<button (click)="loginAnonyme()" *ngIf="!(user | async)?.uid">Login anonyme</button>
-<button (click)="loginGoogle()" *ngIf="!(user | async)?.uid">Login par google</button>
+<div class="blue plein-ecran">
+  <div class="container login">
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="card-panel z-depth-5">
+          <h3 class="center blue-text gras">Super application</h3>
+          <p class="grey-text gras center-align">SE CONNECTER À VOTRE COMPTE </p>
+          <div class="center-align">
+            <a class="waves-effect btn-large btn-flat" (click)="loginGoogle()" *ngIf="!(user | async)?.uid">
+              <i class="fa fa-google" aria-hidden="true"></i>
+            </a>
+            <a class="waves-effect btn-large btn-flat">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+            <a class="waves-effect btn-large btn-flat">
+              <i class="fa fa-linkedin-square"></i>
+            </a>
+          </div>
+          <p class="center grey-text">
+            Ou
+          </p>
+          <div class="row">
+            <form class="col s12 m12">
+              <div class="row">
+                <div class="input-field col s12 m12">
+                  <i class="material-icons prefix">account_circle</i>
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input id="icon_prefix" type="text" class="validate">
+                  <label for="icon_prefix">Email</label>
+                </div>
+
+                <div class="input-field col s12 m12">
+                  <i class="fa fa-unlock-alt prefix"></i>
+                  <input id="icon_password" type="password" class="validate">
+                  <label for="icon_password">Mot de passe</label>
+                </div>
+              </div>
+            </form>
+            <a href="/">Mot de passe oublié ?</a>
+            <div class="pull-right">
+              <a class="btn waves-effect waves-light blue" (click)="loginAnonyme()" *ngIf="!(user | async)?.uid">Connexion
+                <i class="material-icons"></i>
+              </a>
+            </div>
+          </div><!--row-->
+
+          <hr/>
+          <a href="/" >Pas de compte ? inscrivez-vous ...</a>
+
+        </div><!--card-->
+
+
+      </div><!--col-->
+    </div><!--row-->
+    <form class="row">
+      <div class="col s12">
+
+      </div>
+    </form>
+  </div>
+</div>

@@ -5,3 +5,21 @@
 .slider .indicators .indicator-item.active {
   background-color: #2196F3;
 }
+
+.input-field .prefix.active {
+  color: #2196f3;
+}
+
+input[type=text]:focus:not([readonly])+label ,
+input[type=password]:focus:not([readonly])+label {
+  color: #2196f3;
+}
+
+input[type=text]:focus:not([readonly]) ,
+input[type=password]:focus:not([readonly]) {
+  border-bottom: 1px solid #2196f3;
+}
+
+.gras{
+  font-weight: 600;
+}
