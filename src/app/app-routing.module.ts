@@ -5,6 +5,7 @@ import {MessagesComponent} from "./messages/messages.component";
 import {AuthGuard} from "./auth/AuthGuard";
 import {HomeComponent} from "./home/home.component";
 import {MapComponent} from "./map/map.component";
+import {RetourLogin} from "./auth/RetourLogin";
 
 const routes: Routes = [
     {
@@ -14,7 +15,8 @@ const routes: Routes = [
     {
       component: LoginComponent,
       path: 'login',
-      pathMatch: 'full'
+      pathMatch: 'full',
+      canActivate: [RetourLogin]
     },
     {
       component: MessagesComponent,

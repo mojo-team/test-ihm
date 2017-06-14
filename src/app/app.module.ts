@@ -18,6 +18,7 @@ import {AuthGuard} from "./auth/AuthGuard";
 import {MapComponent } from './map/map.component';
 
 import {MapService} from './map/map.service'
+import {RetourLogin} from "./auth/RetourLogin";
 export const firebaseConfig = {
   apiKey: "AIzaSyCvjEn9dqAMZGbnCVa5lMBTVnLJzNbvdl8",
   authDomain: "mojopeinc.firebaseapp.com",
@@ -44,7 +45,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthGuard,MapService],
+  providers: [AuthGuard,RetourLogin, MapService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
