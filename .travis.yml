@@ -1,6 +1,6 @@
 language: node_js
 node_js: node
-script: npm run build
+script: npm run build-prod
 notifications:
   slack: incubateur-sned-pe:7iP0AHMJXJl0T3aWPXTsVfl5
 deploy:
