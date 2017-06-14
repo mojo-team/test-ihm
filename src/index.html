@@ -8,9 +8,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <link media="all" type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation-flex.min.css">
+  <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="assets/materialize/css/materialize.min.css">
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="assets/materialize/js/materialize.min.js"></script>
+
+  <style>
+    .attendre {
+      opacity: 0;
+      transition: all 1s ease-in-out;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .attendre .image {
+      background: url(assets/images/angular.svg) center center no-repeat;
+      background-size: 80px 80px;
+      position: fixed;
+      padding-top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      top: 200px;
+      z-index: 99;
+    }
+
+    app-root:empty + .attendre {
+      opacity: 1;
+      z-index: 100;
+    }
+  </style>
+
 </head>
-<body>
-  <app-root></app-root>
+<body class="grey lighten-4">
+<app-root></app-root>
+<div class="attendre">
+  <div class="image">
+    <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->
+    <svg width="115" height="115" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#2196f3">
+      <g fill="none" fill-rule="evenodd">
+        <g transform="translate(1 1)" stroke-width="2">
+          <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+          <path d="M36 18c0-9.94-8.06-18-18-18">
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 18 18"
+              to="360 18 18"
+              dur="1s"
+              repeatCount="indefinite"/>
+          </path>
+        </g>
+      </g>
+    </svg>
+</div>
 </body>
 </html>

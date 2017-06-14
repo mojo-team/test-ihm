@@ -1,14 +1,7 @@
-body {
-  background-color:#EBEBEB;
-  padding-top: 5em;
+.carousel .indicators .indicator-item {
+  background-color: #bdbdbd;
 }
 
-button {
-  background:#008FEF;
-  padding: 1.2em;
-  width:300px;
-  text-align:center;
-  font-size:1.2em;
-  margin-bottom: 30px;
-  cursor:pointer;
+.slider .indicators .indicator-item.active {
+  background-color: #2196F3;
 }

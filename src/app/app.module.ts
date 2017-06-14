@@ -13,6 +13,7 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {LoginComponent} from './login/login.component';
 import {MessagesComponent} from './messages/messages.component';
+import {HomeComponent} from "./home/home.component";
 import {AuthGuard} from "./auth/AuthGuard";
 
 export const firebaseConfig = {
@@ -27,6 +28,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     LoginComponent,
     MessagesComponent
   ],
