@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {AngularFireAuth} from "angularfire2/auth";
 import {AngularFireDatabase, FirebaseListObservable} from "angularfire2/database";
 import {Observable} from "rxjs/Observable";
 import * as firebase from "firebase/app";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-messages',
@@ -15,7 +16,7 @@ export class MessagesComponent implements OnInit {
   items: FirebaseListObservable<any[]>;
   msgVal: string = '';
 
-  constructor(public afAuth: AngularFireAuth, public af: AngularFireDatabase) {
+  constructor(public afAuth: AngularFireAuth, public af: AngularFireDatabase, public router: Router) {
     this.items = af.list('/messages', {
       query: {
         limitToLast: 50
@@ -24,8 +25,12 @@ export class MessagesComponent implements OnInit {
     this.user = this.afAuth.authState;
   }
 
-
   ngOnInit() {
+    this.afAuth.authState.subscribe((user: firebase.User) => {
+      if (!user) {
+        return this.router.navigate(['/']);
+      }
+    });
   }
 
   logout() {
@@ -33,7 +38,11 @@ export class MessagesComponent implements OnInit {
   }
 
   Send(message: string) {
-    this.items.push({message: message, user: this.afAuth.auth.currentUser.displayName, timestamp: firebase.database.ServerValue.TIMESTAMP});
+    this.items.push({
+      message: message,
+      user: this.afAuth.auth.currentUser.displayName,
+      timestamp: firebase.database.ServerValue.TIMESTAMP
+    });
     this.msgVal = '';
   }
 }

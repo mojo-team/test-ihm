@@ -1,19 +1,27 @@
-import {Component} from "@angular/core";
-import {AngularFireDatabase, FirebaseListObservable} from "angularfire2/database";
+import {Component, OnInit} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import * as firebase from "firebase/app";
 import {AngularFireAuth} from "angularfire2/auth";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+
   user: Observable<firebase.User>;
 
-  constructor(public afAuth: AngularFireAuth, public af: AngularFireDatabase) {
-    this.user = this.afAuth.authState;
+  constructor(public afAuth: AngularFireAuth, private router: Router) {
+  }
+
+  ngOnInit() {
+    this.afAuth.authState.subscribe((user: firebase.User) => {
+      if (user && user.uid) {
+        return this.router.navigate(['/messages']);
+      }
+    });
   }
 
   loginAnonyme() {
@@ -23,5 +31,4 @@ export class LoginComponent {
   loginGoogle() {
     this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
-
 }

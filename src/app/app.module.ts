@@ -13,6 +13,7 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {LoginComponent} from './login/login.component';
 import {MessagesComponent} from './messages/messages.component';
+import {AuthGuard} from "./auth/AuthGuard";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCvjEn9dqAMZGbnCVa5lMBTVnLJzNbvdl8",
@@ -38,7 +39,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
