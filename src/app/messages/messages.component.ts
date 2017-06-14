@@ -32,17 +32,8 @@ export class MessagesComponent implements OnInit {
     this.afAuth.auth.signOut();
   }
 
-  Send(desc: string) {
-    this.items.push({message: desc});
+  Send(message: string) {
+    this.items.push({message: message, user: this.afAuth.auth.currentUser.displayName, timestamp: firebase.database.ServerValue.TIMESTAMP});
     this.msgVal = '';
-  }
-
-  donneLUtilisateur() {
-    if (this.afAuth.auth.currentUser.uid) {
-      return this.afAuth.auth.currentUser.displayName;
-    } else {
-      return 'non connecté';
-    }
-
   }
 }
