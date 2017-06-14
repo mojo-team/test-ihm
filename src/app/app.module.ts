@@ -15,7 +15,9 @@ import {LoginComponent} from './login/login.component';
 import {MessagesComponent} from './messages/messages.component';
 import {HomeComponent} from "./home/home.component";
 import {AuthGuard} from "./auth/AuthGuard";
+import {MapComponent } from './map/map.component';
 
+import {MapService} from './map/map.service'
 export const firebaseConfig = {
   apiKey: "AIzaSyCvjEn9dqAMZGbnCVa5lMBTVnLJzNbvdl8",
   authDomain: "mojopeinc.firebaseapp.com",
@@ -30,7 +32,8 @@ export const firebaseConfig = {
     AppComponent,
     HomeComponent,
     LoginComponent,
-    MessagesComponent
+    MessagesComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard,MapService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

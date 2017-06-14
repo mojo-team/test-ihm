@@ -4,6 +4,7 @@ import {LoginComponent} from "./login/login.component";
 import {MessagesComponent} from "./messages/messages.component";
 import {AuthGuard} from "./auth/AuthGuard";
 import {HomeComponent} from "./home/home.component";
+import {MapComponent} from "./map/map.component";
 
 const routes: Routes = [
     {
@@ -20,7 +21,11 @@ const routes: Routes = [
       path: 'messages',
       pathMatch: 'full',
       canActivate: [AuthGuard]
-    }
+    },
+    {
+        component: MapComponent,
+        path: 'map'
+     }
   ];
 
 @NgModule({
