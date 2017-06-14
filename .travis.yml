@@ -1,6 +1,8 @@
 language: node_js
 node_js: node
 script: npm run build
+notifications:
+  slack: incubateur-sned-pe:7iP0AHMJXJl0T3aWPXTsVfl5
 deploy:
   skip_cleanup: true
   provider: firebase
