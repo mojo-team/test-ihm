@@ -9,6 +9,11 @@ import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {AngularFireModule} from "angularfire2";
 
+import {AppRoutingModule} from './app-routing.module';
+
+import {LoginComponent} from './login/login.component';
+import {MessagesComponent} from './messages/messages.component';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyCvjEn9dqAMZGbnCVa5lMBTVnLJzNbvdl8",
   authDomain: "mojopeinc.firebaseapp.com",
@@ -20,12 +25,15 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule

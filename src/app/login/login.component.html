@@ -1,0 +1,2 @@
+<button (click)="loginAnonyme()" *ngIf="!(user | async)?.uid">Login anonyme</button>
+<button (click)="loginGoogle()" *ngIf="!(user | async)?.uid">Login par google</button>
