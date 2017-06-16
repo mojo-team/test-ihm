@@ -27,8 +27,7 @@ const routes: Routes = [
   {
     component: ChatbotComponent,
     path: 'chatbot',
-    pathMatch: 'full',
-    canActivate: [RetourLogin]
+    canActivate: [AuthGuard]
   },
   {
     component: QuicksearchComponent,
