@@ -3,14 +3,11 @@ import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {AuthGuard} from "./noyau/auth/AuthGuard";
 import {HomeComponent} from "./home/home.component";
-import {MapComponent} from "./map/map.component";
 import {RetourLogin} from "./noyau/auth/RetourLogin";
-import {RechercheComponent} from "./recherche/recherche.component";
-import {ChatbotComponent} from "./chatbot/chatbot.component";
-import {QuicksearchComponent} from "./quicksearch/quicksearch.component";
-import {BookingComponent} from "./booking/booking.component";
-import {AlerteComponent} from "./alerte/alerte.component";
-import {SatisfactionComponent} from "./satisfaction/satisfaction.component";
+import {ResultatComponent} from "./reservation/resultat/resultat.component";
+import {ServicesComponent} from "./reservation/services/services.component";
+import {SalleComponent} from "./reservation/salle/salle.component";
+import {ConfirmationComponent} from "./reservation/confirmation/confirmation.component";
 
 const routes: Routes = [
   {
@@ -25,28 +22,23 @@ const routes: Routes = [
     canActivate: [RetourLogin]
   },
   {
-    component: ChatbotComponent,
-    path: 'chatbot',
+    component: ResultatComponent,
+    path: 'reservation/resultat',
     canActivate: [AuthGuard]
   },
   {
-    component: QuicksearchComponent,
-    path: 'quicksearch',
+    component: ServicesComponent,
+    path: 'reservation/services',
     canActivate: [AuthGuard]
   },
   {
-    component: BookingComponent,
-    path: 'booking',
+    component: SalleComponent,
+    path: 'reservation/salle',
     canActivate: [AuthGuard]
   },
   {
-    component: AlerteComponent,
-    path: 'alerte',
-    canActivate: [AuthGuard]
-  },
-  {
-    component: SatisfactionComponent,
-    path: 'satisfaction',
+    component: ConfirmationComponent,
+    path: 'reservation/confirmation',
     canActivate: [AuthGuard]
   }
 ];

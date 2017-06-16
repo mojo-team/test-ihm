@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChatbotComponent } from './chatbot.component';
+import { SalleComponent } from './salle.component';
 
-describe('ChatbotComponent', () => {
-  let component: ChatbotComponent;
-  let fixture: ComponentFixture<ChatbotComponent>;
+describe('SalleComponent', () => {
+  let component: SalleComponent;
+  let fixture: ComponentFixture<SalleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatbotComponent ]
+      declarations: [ SalleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChatbotComponent);
+    fixture = TestBed.createComponent(SalleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
