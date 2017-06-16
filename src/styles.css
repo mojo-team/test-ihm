@@ -3,21 +3,21 @@
 }
 
 .slider .indicators .indicator-item.active {
-  background-color: #2196F3;
+  background-color: #1565c0;
 }
 
 .input-field .prefix.active {
-  color: #2196f3;
+  color: #1565c0;
 }
 
 input[type=text]:focus:not([readonly])+label ,
 input[type=password]:focus:not([readonly])+label {
-  color: #2196f3;
+  color: #1565c0;
 }
 
 input[type=text]:focus:not([readonly]) ,
 input[type=password]:focus:not([readonly]) {
-  border-bottom: 1px solid #2196f3;
+  border-bottom: 1px solid #1565c0;
 }
 
 .gras{

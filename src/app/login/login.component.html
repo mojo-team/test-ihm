@@ -1,10 +1,11 @@
-<div class="blue plein-ecran">
+<div class="blue darken-3 plein-ecran">
   <div class="container login">
     <div class="row">
       <div class="col s12 m6 offset-m3">
         <div class="card-panel z-depth-5">
-          <h3 class="center blue-text gras">Super application</h3>
-          <p class="grey-text gras center-align">SE CONNECTER À VOTRE COMPTE </p>
+          <div class="center">
+            <img src="assets/images/logo.png" class="responsive-img">
+          </div>
           <div class="center-align">
             <a class="waves-effect btn-large btn-flat" (click)="loginGoogle()" *ngIf="!(user | async)?.uid">
               <i class="fa fa-google" aria-hidden="true"></i>
@@ -36,16 +37,16 @@
                 </div>
               </div>
             </form>
-            <a href="/">Mot de passe oublié ?</a>
+            <a class="blue-text text-darken-3" href="/">Mot de passe oublié ?</a>
             <div class="pull-right">
-              <a class="btn waves-effect waves-light blue" (click)="loginAnonyme()" *ngIf="!(user | async)?.uid">Connexion
+              <a class="btn waves-effect waves-light blue darken-3" (click)="loginAnonyme()" *ngIf="!(user | async)?.uid">Connexion
                 <i class="material-icons"></i>
               </a>
             </div>
           </div><!--row-->
 
           <hr/>
-          <a href="/" >Pas de compte ? inscrivez-vous ...</a>
+          <a href="/" class="blue-text text-darken-3">Pas de compte ? inscrivez-vous ...</a>
 
         </div><!--card-->
 
