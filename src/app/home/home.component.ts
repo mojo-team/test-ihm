@@ -13,8 +13,8 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    $('.slider').slider();
-    $('.slider').slider('pause');
+    //$('.slider').slider();
+    //$('.slider').slider('pause');
   }
 
   public commencer() {

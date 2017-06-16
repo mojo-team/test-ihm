@@ -6,29 +6,30 @@ import {AuthGuard} from "./auth/AuthGuard";
 import {HomeComponent} from "./home/home.component";
 import {MapComponent} from "./map/map.component";
 import {RetourLogin} from "./auth/RetourLogin";
+import {RechercheComponent} from "./recherche/recherche.component";
 
 const routes: Routes = [
-    {
-      path: '',
-      component: HomeComponent
-    },
-    {
-      component: LoginComponent,
-      path: 'login',
-      pathMatch: 'full',
-      canActivate: [RetourLogin]
-    },
-    {
-      component: MessagesComponent,
-      path: 'messages',
-      pathMatch: 'full',
-      canActivate: [AuthGuard]
-    },
-    {
-        component: MapComponent,
-        path: 'map'
-     }
-  ];
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    component: LoginComponent,
+    path: 'login',
+    pathMatch: 'full',
+    canActivate: [RetourLogin]
+  },
+  {
+    component: MapComponent,
+    path: 'map'
+  },
+  {
+    component: RechercheComponent,
+    path: 'recherche',
+    canActivate: [AuthGuard]
+  }
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.afAuth.authState.subscribe((user: firebase.User) => {
       if (user && user.uid) {
-        return this.router.navigate(['/messages']);
+        return this.router.navigate(['/recherche']);
       }
     });
   }

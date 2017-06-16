@@ -22,7 +22,7 @@ export class RetourLogin implements CanActivate {
       .do(authentifie => {
         console.log(authentifie);
         if (authentifie) {
-          return this.router.navigate(['/messages']);
+          return this.router.navigate(['/recherche']);
         }
       })
       .mapTo(true);

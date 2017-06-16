@@ -19,6 +19,7 @@ import {MapComponent } from './map/map.component';
 
 import {MapService} from './map/map.service'
 import {RetourLogin} from "./auth/RetourLogin";
+import { RechercheComponent } from './recherche/recherche.component';
 export const firebaseConfig = {
   apiKey: "AIzaSyCvjEn9dqAMZGbnCVa5lMBTVnLJzNbvdl8",
   authDomain: "mojopeinc.firebaseapp.com",
@@ -34,7 +35,8 @@ export const firebaseConfig = {
     HomeComponent,
     LoginComponent,
     MessagesComponent,
-    MapComponent
+    MapComponent,
+    RechercheComponent
   ],
   imports: [
     BrowserModule,
