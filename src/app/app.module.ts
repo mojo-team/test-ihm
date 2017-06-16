@@ -14,11 +14,11 @@ import {AppRoutingModule} from './app-routing.module';
 import {LoginComponent} from './login/login.component';
 import {MessagesComponent} from './messages/messages.component';
 import {HomeComponent} from "./home/home.component";
-import {AuthGuard} from "./auth/AuthGuard";
+import {AuthGuard} from "./noyau/auth/AuthGuard";
 import {MapComponent } from './map/map.component';
 
 import {MapService} from './map/map.service'
-import {RetourLogin} from "./auth/RetourLogin";
+import {RetourLogin} from "./noyau/auth/RetourLogin";
 import { RechercheComponent } from './recherche/recherche.component';
 export const firebaseConfig = {
   apiKey: "AIzaSyCvjEn9dqAMZGbnCVa5lMBTVnLJzNbvdl8",

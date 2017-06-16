@@ -1,17 +1,17 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {NgModule} from "@angular/core";
+import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
-import {MessagesComponent} from "./messages/messages.component";
-import {AuthGuard} from "./auth/AuthGuard";
+import {AuthGuard} from "./noyau/auth/AuthGuard";
 import {HomeComponent} from "./home/home.component";
 import {MapComponent} from "./map/map.component";
-import {RetourLogin} from "./auth/RetourLogin";
+import {RetourLogin} from "./noyau/auth/RetourLogin";
 import {RechercheComponent} from "./recherche/recherche.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     component: LoginComponent,
@@ -21,7 +21,8 @@ const routes: Routes = [
   },
   {
     component: MapComponent,
-    path: 'map'
+    path: 'map',
+    canActivate: [AuthGuard]
   },
   {
     component: RechercheComponent,
