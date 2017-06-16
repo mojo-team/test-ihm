@@ -23,6 +23,7 @@ import {ServicesComponent} from "./reservation/services/services.component";
 import {ConfirmationComponent} from "./reservation/confirmation/confirmation.component";
 import {SalleComponent} from "./reservation/salle/salle.component";
 import {CardSliderComponent} from "./home/card-slider/card-slider.component";
+import {NavbarComponent} from "./noyau/navbar/navbar.component";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCvjEn9dqAMZGbnCVa5lMBTVnLJzNbvdl8",
@@ -43,7 +44,8 @@ export const firebaseConfig = {
     ResultatComponent,
     ServicesComponent,
     ConfirmationComponent,
-    SalleComponent
+    SalleComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
