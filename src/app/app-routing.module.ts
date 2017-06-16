@@ -6,6 +6,11 @@ import {HomeComponent} from "./home/home.component";
 import {MapComponent} from "./map/map.component";
 import {RetourLogin} from "./noyau/auth/RetourLogin";
 import {RechercheComponent} from "./recherche/recherche.component";
+import {ChatbotComponent} from "./chatbot/chatbot.component";
+import {QuicksearchComponent} from "./quicksearch/quicksearch.component";
+import {BookingComponent} from "./booking/booking.component";
+import {AlerteComponent} from "./alerte/alerte.component";
+import {SatisfactionComponent} from "./satisfaction/satisfaction.component";
 
 const routes: Routes = [
   {
@@ -20,16 +25,31 @@ const routes: Routes = [
     canActivate: [RetourLogin]
   },
   {
-    component: MapComponent,
-    path: 'map',
+    component: ChatbotComponent,
+    path: 'chatbot',
+    pathMatch: 'full',
+    canActivate: [RetourLogin]
+  },
+  {
+    component: QuicksearchComponent,
+    path: 'quicksearch',
     canActivate: [AuthGuard]
   },
   {
-    component: RechercheComponent,
-    path: 'recherche',
+    component: BookingComponent,
+    path: 'booking',
+    canActivate: [AuthGuard]
+  },
+  {
+    component: AlerteComponent,
+    path: 'alerte',
+    canActivate: [AuthGuard]
+  },
+  {
+    component: SatisfactionComponent,
+    path: 'satisfaction',
     canActivate: [AuthGuard]
   }
-
 ];
 
 @NgModule({

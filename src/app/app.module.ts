@@ -20,6 +20,11 @@ import {MapComponent } from './map/map.component';
 import {MapService} from './map/map.service'
 import {RetourLogin} from "./noyau/auth/RetourLogin";
 import { RechercheComponent } from './recherche/recherche.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { BookingComponent } from './booking/booking.component';
+import { QuicksearchComponent } from './quicksearch/quicksearch.component';
+import { AlerteComponent } from './alerte/alerte.component';
+import { SatisfactionComponent } from './satisfaction/satisfaction.component';
 export const firebaseConfig = {
   apiKey: "AIzaSyCvjEn9dqAMZGbnCVa5lMBTVnLJzNbvdl8",
   authDomain: "mojopeinc.firebaseapp.com",
@@ -36,7 +41,12 @@ export const firebaseConfig = {
     LoginComponent,
     MessagesComponent,
     MapComponent,
-    RechercheComponent
+    RechercheComponent,
+    ChatbotComponent,
+    BookingComponent,
+    QuicksearchComponent,
+    AlerteComponent,
+    SatisfactionComponent
   ],
   imports: [
     BrowserModule,
