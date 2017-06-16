@@ -23,11 +23,8 @@ export class HomeComponent implements AfterViewInit {
   }
 
   public logout() {
-    return this.afAuth.auth.signOut().then(()=>{
-      this.router.navigate(['/']);
+    return this.afAuth.auth.signOut().then(() => {
+      this.router.navigate(['/login'])
     });
-
   }
-
-
 }
