@@ -1,5 +1,6 @@
 import {AfterViewInit, Component} from "@angular/core";
 import {Router} from "@angular/router";
+import {AngularFireAuth} from "angularfire2/auth";
 declare var $: any;
 
 @Component({
@@ -9,7 +10,7 @@ declare var $: any;
 })
 export class HomeComponent implements AfterViewInit {
 
-  constructor(private router: Router) {
+  constructor(public afAuth: AngularFireAuth, public router: Router) {
   }
 
   ngAfterViewInit(): void {
@@ -19,6 +20,13 @@ export class HomeComponent implements AfterViewInit {
 
   public commencer() {
     this.router.navigate(['/login']);
+  }
+
+  public logout() {
+    return this.afAuth.auth.signOut().then(()=>{
+      this.router.navigate(['/']);
+    });
+
   }
 
 
