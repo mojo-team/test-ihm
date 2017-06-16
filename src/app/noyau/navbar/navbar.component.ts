@@ -17,5 +17,10 @@ export class NavbarComponent {
       this.router.navigate(['/login'])
     });
   }
+
+  public donneUrlPhotoUtilisateur(){
+    console.log(this.afAuth.auth.currentUser.photoURL);
+    return this.afAuth.auth.currentUser.photoURL;
+  }
 }
 
