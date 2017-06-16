@@ -25,11 +25,9 @@ import { BookingComponent } from './booking/booking.component';
 import { QuicksearchComponent } from './quicksearch/quicksearch.component';
 import { AlerteComponent } from './alerte/alerte.component';
 import { SatisfactionComponent } from './satisfaction/satisfaction.component';
-<<<<<<< Updated upstream
 import { NavbarComponent } from './noyau/navbar/navbar.component';
-=======
 import { CardSliderComponent } from './home/card-slider/card-slider.component';
->>>>>>> Stashed changes
+
 export const firebaseConfig = {
   apiKey: "AIzaSyCvjEn9dqAMZGbnCVa5lMBTVnLJzNbvdl8",
   authDomain: "mojopeinc.firebaseapp.com",
