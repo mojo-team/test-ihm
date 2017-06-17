@@ -1,5 +1,37 @@
 <div class="row">
   <div class="col s12">
-    <h2>{{salle.nom}}</h2>
+    <h2 class="blue-text text-darken-3">{{salle.nom}}
+      <small class="pull-right grey-text text-darken-1">{{salle.prix}} €</small>
+    </h2>
+    <p class="grey-text text-darken-1">{{salle.adresse}}</p>
+    <hr/>
+    <div class="row">
+      <div class="col s12 m8 ">
+        <h4 class="grey-text text-darken-2">About this office</h4>
+        <p class="grey-text text-darken-2">{{salle.description}}</p>
+      </div>
+      <div class="col s12 m4">
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <span class="title">Informations</span>
+            <p>
+              <small>Capacity</small>
+              <span class="pull-right">{{salle.nombrePlaces}}</span></p>
+            <p>
+              <small>Experience</small>
+              <span class="pull-right">{{salle.experience}}</span></p>
+            <p>
+              <small>floor</small>
+              <span class="pull-right">{{salle.etage}}</span></p>
+            <p>
+              <small>room number</small>
+              <span class="pull-right">{{salle.bureau}}</span></p>
+            <br/>
+            <p class="center"><a *ngFor="let etoile of etoiles()"><i class="material-icons">grade</i></a></p>
+          </li>
+        </ul>
+      </div>
+      <hr/>
+    </div>
   </div>
 </div>

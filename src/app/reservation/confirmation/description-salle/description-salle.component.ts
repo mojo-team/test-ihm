@@ -15,4 +15,8 @@ export class DescriptionSalleComponent implements OnInit {
   ngOnInit() {
   }
 
+  public etoiles():number[]{
+    return Array(5).fill(4);
+  }
+
 }
