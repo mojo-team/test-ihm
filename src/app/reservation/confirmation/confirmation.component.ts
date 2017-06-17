@@ -29,7 +29,7 @@ export class ConfirmationComponent implements OnInit {
 
   public salle: any = {
     "nom": "Mont Saint Michel",
-    "cheminPhoto": "/images/vos-collegues-aiment/r-8-1.jpg",
+    "cheminPhoto": "/assets/images/vos-collegues-aiment/r-8-1.jpg",
     "prix": 100,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nisl magna, laoreet at mauris at, fermentum fringilla metus. Nam ut nisl id augue placerat sagittis.",
     "notation": 4,
