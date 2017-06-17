@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   }
 
   public experiences: Array<Card> = [
-    {nom: 'friends', image: 'experiences/copains.jpg', route: 'reservation/confirmation/5'},
+    {nom: 'friends', image: 'experiences/copains.jpg', route: 'reservation/confirmation/5?withFriends=true'},
     {nom: 'zen', image: 'experiences/zen.jpg', route: 'reservation/resultat/experience/zen'},
     {nom: 'ideation', image: 'experiences/creation.jpg', route: 'reservation/resultat/experience/ideation'},
     {nom: 'focus', image: 'experiences/concentration.jpg', route: 'reservation/resultat/experience/focus'},
