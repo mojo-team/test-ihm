@@ -77,8 +77,8 @@ export class ConfirmationComponent implements OnInit {
   public collegues: Array<Amis> = [
     {
       id: 0,
-      nom: "Doe",
-      prenom: "John"
+      nom: "Merel",
+      prenom: "Christiansen"
     },
     {
       id: 1,
