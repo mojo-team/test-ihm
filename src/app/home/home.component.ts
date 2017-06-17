@@ -20,7 +20,8 @@ export class HomeComponent implements OnInit {
     { nom: 'zen', image: 'experiences/zen.jpg', route: 'reservation/resultat' },
     { nom: 'création', image: 'experiences/creation.jpg', route: 'reservation/resultat' },
     { nom: 'copains', image: 'experiences/copains.jpg', route: 'reservation/resultat/copains' },
-    { nom: 'concentration', image: 'experiences/concentration.jpg', route: 'reservation/resultat' }
+    { nom: 'concentration', image: 'experiences/concentration.jpg', route: 'reservation/resultat' },
+    { nom: 'reunion', image: 'experiences/reunir.jpg', route: 'reservation/resultat' }
   ];
 
 }
