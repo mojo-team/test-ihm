@@ -17,7 +17,8 @@ export class RecommandationService {
     let  idSpot: String;
    return this.af.list('/spots', {
       query: {
-        limitToLast: 50
+        orderByChild: 'islibre',
+        equalTo: 1 
       }
   }).map((snapshots,key)=>{
  
