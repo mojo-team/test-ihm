@@ -16,7 +16,7 @@ import {HomeComponent} from "./home/home.component";
 import {AuthGuard} from "./noyau/auth/AuthGuard";
 import {MapComponent} from "./map/map.component";
 import {TestComponent} from "./test/test.component";
-
+import {SalleService} from "./service/salle-service";
 import {RecommandationService} from './recommandation/recommandation.service'
 import {MapService} from "./map/map.service";
 import {RetourLogin} from "./noyau/auth/RetourLogin";
@@ -61,7 +61,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthGuard,RetourLogin, MapService,RecommandationService],
+  providers: [AuthGuard,RetourLogin, MapService,RecommandationService,SalleService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

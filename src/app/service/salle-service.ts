@@ -5,7 +5,14 @@ import 'rxjs/add/observable/of';
 import * as firebase from "firebase/app";
 
 
-const SALLES: Salle[] = [{experience: 'zen', lieu: 'Paris', capacite: 5}];
+const SALLES: Salle[] = [{  "identifiantSalle": "salle1",  "nom": "Nom de la salle 1", 
+ "cheminPhoto": "/xxx/ggg.png",  "prix": 100,  "description": "Une description de salle", 
+  "notation": 4,  "nombrePlaces": 10,  "adresse": "une adresse",  "agencement": "En U", 
+   "experience": "zen",  "etage": 2,  "bureau": 204},
+   {  "identifiantSalle": "salle1",  "nom": "Nom de la salle 1", 
+ "cheminPhoto": "/xxx/ggg.png",  "prix": 100,  "description": "Une description de salle", 
+  "notation": 4,  "nombrePlaces": 10,  "adresse": "une adresse",  "agencement": "En U", 
+   "experience": "zen",  "etage": 2,  "bureau": 204}];
 
 @Injectable()
 export class SalleService {
