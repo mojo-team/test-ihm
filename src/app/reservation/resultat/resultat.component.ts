@@ -11,7 +11,7 @@ import {SalleService} from "../../service/salle-service";
 })
 export class ResultatComponent implements OnInit {
 
-  private salles: Observable<Salle[]>;
+  public salles: Observable<Salle[]>;
 
   constructor(private route: ActivatedRoute, private salleService: SalleService) {
   }
