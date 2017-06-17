@@ -5,6 +5,8 @@ import {Observable} from "rxjs/Observable";
 import {Salle} from "../service/salle";
 import {SalleService} from "../service/salle-service";
 import {AngularFireAuth} from "angularfire2/auth";
+import {ActivatedRoute} from "@angular/router";
+import {Http, Headers,RequestOptions} from "@angular/http";
 declare var $: any;
 
 @Component({
@@ -16,7 +18,8 @@ export class HomeComponent implements OnInit {
 
   private localisation: string;
 
-  constructor(private salleService: SalleService, private auth: AngularFireAuth) {
+  constructor(private salleService: SalleService, private auth: AngularFireAuth,private route:ActivatedRoute,
+    private http:Http) {
 
   }
 
@@ -26,6 +29,18 @@ export class HomeComponent implements OnInit {
       selectYears: 15 // Creates a dropdown of 15 years to control year
     });
     $('#recherche_popup').modal();
+
+    if(this.route.snapshot.queryParams['notification']){
+      let headers = new Headers({'Content-Type': 'application/json'});
+      let options = new RequestOptions({headers: headers});
+      this.http.get("https://vivatech.pintade.org/pushavis", options)
+        .subscribe(() => {
+          window.location.href="/";
+        }, (error) => {
+          console.log(error);
+        })
+
+    }
   }
 
   public experiences: Array<Card> = [

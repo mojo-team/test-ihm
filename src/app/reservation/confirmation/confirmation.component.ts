@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {SalleService} from "../../service/salle-service";
 import {Salle} from "../../service/salle";
+import {Http, RequestOptions, Headers} from "@angular/http";
+declare var $: any;
 
 export class Facility {
   public identifiant: number;
@@ -85,7 +87,7 @@ export class ConfirmationComponent implements OnInit {
     }
   ];
 
-  constructor(private route: ActivatedRoute, private salleService: SalleService) {
+  constructor(private route: ActivatedRoute, private salleService: SalleService, public http: Http) {
   }
 
   ngOnInit() {
@@ -95,6 +97,11 @@ export class ConfirmationComponent implements OnInit {
         this.salle = salle;
       });
   }
+
+  public done() {
+    window.location.href="/?notification=true"
+  }
+
 
   public total(): Number {
     return this.facilities.filter(facility => facility.reserve).reduce((total, element) => total + element.prix, 0) + this.salle.prix;
