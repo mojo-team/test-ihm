@@ -99,9 +99,8 @@ export class ConfirmationComponent implements OnInit {
   ngOnInit() {
   }
 
-  public
-  total(): Number {
-    return this.facilities.filter(facility => facility.reserve).reduce((total, element) => total + element.prix, 0);
+  public total(): Number {
+    return this.facilities.filter(facility => facility.reserve).reduce((total, element) => total + element.prix, 0) + this.salle.prix;
   }
 
 }
