@@ -44,17 +44,17 @@ export class SalleService {
   }).map((snapshots)=>{return snapshots});
   }
 
-  public recupereLesSallesPreferePourUnUtilisateur(idutilisateur: number): Observable<Salle[]> {
+  public recupereLesSallesPreferePourUnUtilisateur(idutilisateur: string): Observable<Salle[]> {
     return this.af.list('/meilleures_salles', {
       query: {
         orderByChild: 'identifiantUtilisateur',
         equalTo: idutilisateur
       }
   }).map((snapshots)=>
-  {return snapshots.map((item)=>{this.recupererLaSalle(item.identifiantSalle)})});
+  {return snapshots.map((item)=>{return this.recupererLaSalle(item.identifiantSalle)})});
 }
 
-public recupererLaSalle(idSalle:String):FirebaseObjectObservable<Salle>{
-   return this.af.object('/salles/'+idSalle);
+public recupererLaSalle(idSalle:String):Observable<Salle>{
+   return this.af.object('/salles/'+idSalle).map((item)=>{return item});
 }
 }
