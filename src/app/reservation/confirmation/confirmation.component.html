@@ -14,12 +14,12 @@
     <div class="row periode">
     <div class="col s6">
 
-      <button class="waves-effect waves-light btn-large lighten-3"
+      <button class="waves-effect waves-light btn-large lighten-3 blue darken-3"
               [ngClass]="{'disabled':reservation.morning}"
               (click)="reservation.morning = !reservation.morning"><i class="material-icons left">cloud</i>morning</button>
     </div>
     <div class="col s6">
-      <button class="waves-effect waves-light btn-large"
+      <button class="waves-effect waves-light btn-large blue darken-3"
               [ngClass]="{'disabled':reservation.afternoon}"
               (click)="reservation.afternoon = !reservation.afternoon"><i class="material-icons right">cloud</i>afternoon</button>
 
@@ -88,7 +88,7 @@
     <div class="row">
       <div class="col offset-s6 s6 right-align">
 
-        <button class="waves-effect waves-light btn-large right-align"
+        <button class="waves-effect waves-light btn-large right-align blue darken-3"
                 routerLink="resultat"><i class="material-icons left">done</i>
           Book
         </button>
