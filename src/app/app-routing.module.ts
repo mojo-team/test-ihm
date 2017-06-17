@@ -54,7 +54,7 @@ const routes: Routes = [
   },
   {
     component: ConfirmationComponent,
-    path: 'reservation/confirmation/:salle',
+    path: 'reservation/confirmation/:salle/:withFriends',
     canActivate: [AuthGuard]
   },
    {

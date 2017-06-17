@@ -92,6 +92,7 @@ export class ConfirmationComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.route.snapshot.params['salle']);
+    console.log(this.route.snapshot.params['withFriends']);
     return this.salleService.recupererLaSalle(this.route.snapshot.params['salle'])
       .subscribe((salle) => {
         this.salle = salle;
