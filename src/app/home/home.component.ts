@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
   ];
 
   public preferees(): Observable<Card[]> {
-    return this.salleService.recupereLesSallesPreferePourUnUtilisateur(29)
+    return this.salleService.recupereLesSallesPreferePourUnUtilisateur('29')
       .map((snapshots) => {
         console.log(JSON.stringify(snapshots));
       return snapshots.map((item) => {
