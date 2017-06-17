@@ -12,16 +12,18 @@
     </div>
 
     <div class="row periode">
-    <div class="col s6">
+      <div class="col s6">
 
-      <button class="waves-effect waves-light btn-large lighten-3 blue darken-3"
-              [ngClass]="{'disabled':reservation.morning}"
-              (click)="reservation.morning = !reservation.morning">A.M</button>
-    </div>
-    <div class="col s6">
-      <button class="waves-effect waves-light btn-large blue darken-3"
-              [ngClass]="{'disabled':reservation.afternoon}"
-              (click)="reservation.afternoon = !reservation.afternoon">P.M</button>
+        <button class="waves-effect waves-light btn-large lighten-3 blue darken-3"
+                [ngClass]="{'disabled':reservation.morning}"
+                (click)="reservation.morning = !reservation.morning">A.M
+        </button>
+      </div>
+      <div class="col s6">
+        <button class="waves-effect waves-light btn-large blue darken-3"
+                [ngClass]="{'disabled':reservation.afternoon}"
+                (click)="reservation.afternoon = !reservation.afternoon">P.M
+        </button>
 
       </div>
     </div>
@@ -49,13 +51,13 @@
       </div>
     </div>
 
-  <div class="row">
-    <div class="col s12">
+    <div class="row">
+      <div class="col s12">
 
-      <div class="row" *ngFor="let facility of facilities">
-        <div class="col s2">
+        <div class="row" *ngFor="let facility of facilities">
+          <div class="col s2">
 
-        <div class="switch">
+            <div class="switch">
               <label>
                 Off
                 <input type="checkbox" [(ngModel)]="facility.reserve" name="{{facility.nom}} value={{facility.identifiant}}">
@@ -89,11 +91,29 @@
       <div class="col offset-s6 s6 right-align">
 
         <button class="waves-effect waves-light btn-large right-align blue darken-3"
-                routerLink="resultat"><i class="material-icons left">done</i>
+                onClick="$('#confirmation_modal').modal();$('#confirmation_modal').modal('open')">
+          <i class="material-icons left">done</i>
           Book
         </button>
 
 
+      </div>
+    </div>
+
+    <div id="confirmation_modal" class="modal">
+      <div class="modal-content center">
+        <h3>Booked <i class="green-text material-icons">checked</i></h3>
+        <h4 class="center grey-text text-darken-2"><i class="material-icons">mail</i> Notification send to site</h4>
+        <h5 class="blue-text text-darken-3">
+          <br/>
+          <a class="espace"><i class="fa fa-twitter"></i></a>
+          <a class="espace"><i class="fa fa-facebook"></i></a>
+          <a class="espace"><i class="fa fa-envelope"></i></a>
+          <a><i class="fa fa-slack"></i></a>
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <a routerLink="/" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
       </div>
     </div>
 

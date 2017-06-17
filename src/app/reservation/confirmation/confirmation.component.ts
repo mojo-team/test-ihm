@@ -14,7 +14,6 @@ export class Reservation {
   public morning: boolean = false;
   public afternoon: boolean = false;
   public facilities: Array<Facility> = [];
-  public whoIsHere: Array<String> = [];
 }
 
 export class Amis {
@@ -29,6 +28,7 @@ export class Amis {
   styleUrls: ['./confirmation.component.css']
 })
 export class ConfirmationComponent implements OnInit {
+
 
   public facilities: Array<Facility> = [
     {
@@ -94,7 +94,6 @@ export class ConfirmationComponent implements OnInit {
       .subscribe((salle) => {
         this.salle = salle;
       });
-
   }
 
   public total(): Number {
