@@ -52,11 +52,10 @@ export class HomeComponent implements OnInit {
   ];
 
 
-  public preferees: Array<Card> = [
-    {nom: 'Tour Eiffel', image: 'vos-collegues-aiment/r-8-2.jpg', route: 'reservation/confirmation/2/false'},
-    {nom: 'Mont Saint Michel', image: 'vos-collegues-aiment/r-8-1.jpg', route: 'reservation/confirmation/1/false'},
-    {nom: 'Tour de Pise', image: 'vos-collegues-aiment/r-12-3.jpg', route: 'reservation/confirmation/3/false'}
-
+  public preferees: Array<CardNote> = [
+    new CardNote('Tour Eiffel', 'vos-collegues-aiment/r-8-2.jpg', 'reservation/confirmation/2/false', 4),
+    new CardNote('Mont Saint Michel', 'vos-collegues-aiment/r-8-1.jpg', 'reservation/confirmation/1/false', 3),
+    new CardNote('Tour de Pise', 'vos-collegues-aiment/r-12-3.jpg', 'reservation/confirmation/3/false', 5)
   ];
 
   public contactsLove: Array<CardNote> = [
