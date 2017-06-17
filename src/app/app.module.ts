@@ -25,6 +25,7 @@ import {ServicesComponent} from "./reservation/services/services.component";
 import {ConfirmationComponent} from "./reservation/confirmation/confirmation.component";
 import {SalleComponent} from "./reservation/salle/salle.component";
 import {CardSliderComponent} from "./home/card-slider/card-slider.component";
+import {CardSliderNoteComponent} from "./home/card-slider-note/card-slider-note.component";
 import {NavbarComponent} from "./noyau/navbar/navbar.component";
 import { FooterComponent } from './noyau/footer/footer.component';
 import { EnteteSalleComponent } from './reservation/confirmation/entete-salle/entete-salle.component';
@@ -46,6 +47,7 @@ export const firebaseConfig = {
     LoginComponent,
     MapComponent,
     CardSliderComponent,
+    CardSliderNoteComponent,
     ResultatComponent,
     ServicesComponent,
     ConfirmationComponent,

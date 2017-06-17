@@ -1,0 +1,21 @@
+.card-slider-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+.card-slider-container-inside {
+  display: inline;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.card {
+  display: inline-block;
+  width: 200px;
+}
+
+.card .card-content {
+  padding: 5px;
+}
+

@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Card} from "./card-slider/card-slider.component";
+import {CardNote} from "./card-slider-note/card-slider-note.component";
 import {Observable} from "rxjs/Observable";
 import {Salle} from "../service/salle";
 import {SalleService} from "../service/salle-service";
@@ -33,6 +34,13 @@ export class HomeComponent implements OnInit {
     {nom: 'ideation', image: 'experiences/creation.jpg', route: 'reservation/resultat/experience/ideation'},
     {nom: 'focus', image: 'experiences/concentration.jpg', route: 'reservation/resultat/experience/focus'},
     {nom: 'meeting', image: 'experiences/reunir.jpg', route: 'reservation/resultat/experience/meeting'}
+  ];
+
+  public contactsLove: Array<CardNote> = [
+    {nom: 'friends', image: 'experiences/copains.jpg', route: 'reservation/confirmation/5?withFriends=true', note: 3},
+    {nom: 'zen', image: 'experiences/zen.jpg', route: 'reservation/resultat/experience/zen', note: 4},
+    {nom: 'ideation', image: 'experiences/creation.jpg', route: 'reservation/resultat/experience/ideation', note: 5},
+    {nom: 'focus', image: 'experiences/concentration.jpg', route: 'reservation/resultat/experience/focus', note: 2}
   ];
 
   public preferees(): Observable<Card[]> {

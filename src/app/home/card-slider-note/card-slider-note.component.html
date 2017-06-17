@@ -1,0 +1,25 @@
+<h4 class="grey-text text-darken-3 left-align">{{titre}}</h4>
+<div class="card-slider-container">
+   <span *ngFor="let card of cards" class="card-slider-container-inside">
+
+
+  <div class="card">
+    <a routerLink="{{card.route}}">
+    <div class="card-image">
+      <img src="assets/images/{{card.image}}">
+    </div>
+    <div class="card-content">
+      <p class="left-align">{{card.nom}}</p>
+      <p class="left-align">
+        <a *ngIf="card.note >= 1"><i class="material-icons">grade</i></a>
+        <a *ngIf="card.note >= 2"><i class="material-icons">grade</i></a>
+        <a *ngIf="card.note >= 3"><i class="material-icons">grade</i></a>
+        <a *ngIf="card.note >= 4"><i class="material-icons">grade</i></a>
+        <a *ngIf="card.note >= 5"><i class="material-icons">grade</i></a>
+      </p>
+    </div>
+    </a>
+  </div>
+
+    </span>
+</div>
