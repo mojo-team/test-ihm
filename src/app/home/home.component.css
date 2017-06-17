@@ -1,3 +1,15 @@
 .carousel .indicators .indicator-item.active {
   color: #1565c0 !important;
 }
+
+.recherche{
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+.recherche-bordure{
+  border-right: 1px solid lightgray;
+}
+
+.rechercher{
+  width:100%;
+}

@@ -1,20 +1,38 @@
 <navbar></navbar>
-<div class="row ">
-  <div class="col s12 indigo-text grey-text text-darken-2">
-      <h2><strong class="blue-text text-darken-3">Spooter.</strong><small>Trouver plus qu'un bureau</small> </h2>
+<div class="container">
+  <div class="row ">
+    <div class="col s12 indigo-text grey-text text-darken-2">
+      <h2><strong class="blue-text text-darken-3">Spooter.</strong>
+        <small>Trouver plus qu'un bureau</small>
+      </h2>
+    </div>
   </div>
-</div>
-<div class="row ">
-  <div class="col s12 indigo-text text-darken-4 center">
-    <a class="waves-effect waves-light btn-large white-text blue" routerLink="chatbot">Chatbot</a>
-    <a class="waves-effect waves-light btn-large white-text blue" routerLink="quicksearch">QuickSearch</a>
-    <a class="waves-effect waves-light btn-large white-text blue" routerLink="booking">Booking</a>
-    <a class="waves-effect waves-light btn-large white-text blue" routerLink="alerte">Alerte</a>
-    <a class="waves-effect waves-light btn-large white-text blue" routerLink="satisfaction">Satisfaction</a>
+
+  <div class="row hide-on-med-and-down grey-text text-darken-2 recherche">
+    <div class="col m3 recherche-bordure">
+      Localisation
+      <input placeholder="Proche de moi" id="localisation" type="text" class="validate">
+    </div>
+    <div class="col m3 recherche-bordure">
+      Date
+      <input type="date" id="date" class="datepicker" placeholder="Maintenant">
+    </div>
+    <div class="col m3 recherche-bordure">
+      Nombre de participants
+      <input placeholder="3 participants" id="participants" type="number" class="validate">
+    </div>
+    <div class="col m3">
+      Durée
+      <p class="range-field">
+        <input type="range" id="duree" min="0" max="48"/>
+      </p>
+    </div>
   </div>
-</div>
-<div class="row ">
-  <div class="col s12 indigo-text text-darken-4 center">
+
+  <div class="row ">
+    <div class="col offset-l2 m8 indigo-text text-darken-4 center">
+      <a class="waves-effect waves-light btn white-text blue rechercher" routerLink="chatbot">Rechercher</a>
+    </div>
   </div>
 </div>
 
