@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Card} from "./card";
 
 @Component({
@@ -8,12 +8,17 @@ import {Card} from "./card";
 })
 export class CardSliderComponent implements OnInit {
 
-  public cards: Array<Card> = [
-    { nom: 'test'},
-    { nom: 'test'}
-  ];
+  @Input() public cards: Array<Card>;
 
-  constructor() { }
+  public swipeOptions: any;
+
+  constructor() {
+    this.swipeOptions = {
+      slidesPerView: 4,
+      loop: false,
+      spaceBetween: 5
+    };
+  }
 
   ngOnInit() {  }
 

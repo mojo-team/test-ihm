@@ -3,6 +3,6 @@
  */
 
 export class Card {
-  constructor(public nom){
+  constructor(public nom: String, public image: String){
   }
 }
