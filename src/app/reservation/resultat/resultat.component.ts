@@ -17,12 +17,16 @@ export class ResultatComponent implements OnInit {
   }
 
   ngOnInit() {
-    const localite = this.route.snapshot.params["localite"];
-    const date = this.route.snapshot.params["date"];
-    const attendees = this.route.snapshot.params["attendees"];
-    const duree = this.route.snapshot.params["duree"];
+    if (this.route.snapshot.params["experience"]) {
+      this.salles = this.salleService.recupereLesSallesParExperience(this.route.snapshot.params["experience"]);
+    } else {
+      const localite = this.route.snapshot.params["localite"];
+      const date = this.route.snapshot.params["date"];
+      const attendees = this.route.snapshot.params["attendees"];
+      const duree = this.route.snapshot.params["duree"];
 
-    this.salles = this.salleService.recupereLesSalles(localite, date, attendees, duree);
+      this.salles = this.salleService.recupereLesSalles(localite, date, attendees, duree);
+    }
   }
 
 }
