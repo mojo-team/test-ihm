@@ -1,3 +1,64 @@
-<p>
-  confirmation works!
-</p>
+<navbar></navbar>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+
+    <h1>well done !</h1>
+
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+
+      <h2>Would you like...</h2>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <form>
+
+      <div class="row" *ngFor="let facility of facilities">
+        <div class="col s2">
+
+          <div class="switch">
+            <label>
+              Off
+              <input type="checkbox" [(ngModel)]="facility.selected" name="{{facility.name}}">
+              <span class="lever"></span>
+              On
+            </label>
+          </div>
+
+        </div>
+        <div class="col s8">
+          {{facility.name}}
+        </div>
+        <div class="col s2 right-align">
+           {{facility.price}}
+        </div>
+
+      </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col offset-s6 s3">
+
+      <h2>{{total()}}</h2>
+
+    </div>
+    <div class="col s3">
+
+      <a>GO !</a>
+
+    </div>
+  </div>
+
+
+</div>
