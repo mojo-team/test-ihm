@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {SalleService} from "../../service/salle-service";
+import {Salle} from "../../service/salle";
 
 export class Facility {
   public identifiant: number;
@@ -62,21 +65,10 @@ export class ConfirmationComponent implements OnInit {
       prix: 15,
       reserve: false
     }
-    ];
+  ];
 
 
-  public salle: any = {
-    "nom": "Mont Saint Michel",
-    "cheminPhoto": "/assets/images/vos-collegues-aiment/r-8-1.jpg",
-    "prix": 100,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nisl magna, laoreet at mauris at, fermentum fringilla metus. Nam ut nisl id augue placerat sagittis.",
-    "notation": 4,
-    "nombrePlaces": 8,
-    "adresse": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "experience": "meeting",
-    "etage": 3,
-    "bureau": 301
-  };
+  public salle: Salle;
 
   public reservation: Reservation = new Reservation();
 
@@ -93,10 +85,16 @@ export class ConfirmationComponent implements OnInit {
     }
   ];
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private salleService: SalleService) {
   }
 
   ngOnInit() {
+
+    this.salleService.recupererLaSalle(this.route.snapshot.params['salle'])
+      .subscribe((salle) => {
+        this.salle = salle;
+      });
+
   }
 
   public total(): Number {
