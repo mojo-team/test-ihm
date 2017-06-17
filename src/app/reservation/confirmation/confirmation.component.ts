@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 export class Facility {
-  public name: String;
-  public price: Number;
-  public selected: boolean;
+  public identifiant: number;
+  public nom: String;
+  public prix: number;
+  public reserve: boolean;
 }
 
 export class Reservation {
@@ -21,11 +22,35 @@ export class Reservation {
 export class ConfirmationComponent implements OnInit {
 
   public facilities: Array<Facility> = [
-    { name: 'coffee', price: 7.5, selected: false },
-    { name: 'visio', price: 100, selected: false },
-    { name: 'edredon', price: 1000, selected: false },
-    { name: 'hotesse', price: 500, selected: false }
-  ];
+    {
+      identifiant: 2, nom: "Accès WIFI", prix: 10
+      ,
+      reserve: false
+    }, {
+      identifiant: 3,
+      nom: "Bloc notes / Stylos",
+      prix: 5,
+      reserve: false
+    }, {
+      identifiant: 5, nom: "Ecran de projection", prix: 50,
+      reserve: false
+    }, {
+      identifiant: 6,
+      nom: "Paper board",
+      prix: 10
+      ,
+      reserve: false
+    }, {
+      identifiant: 7, nom: "Photocopieur", prix: 20,
+      reserve: false
+    }, {
+      identifiant: 8,
+      nom: "Vidéo projecteur",
+      prix: 20
+      ,
+      reserve: false
+    }];
+
 
   public salle: any = {
     "nom": "Mont Saint Michel",
@@ -42,13 +67,15 @@ export class ConfirmationComponent implements OnInit {
 
   public reservation: Reservation = new Reservation();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  public total() : Number {
-    return this.facilities.filter(facility => facility.selected).reduce((total, element) => total+element.price.valueOf(), 0);
+  public
+  total(): Number {
+    return this.facilities.filter(facility => facility.reserve).reduce((total, element) => total + element.prix, 0);
   }
 
 }
