@@ -52,10 +52,10 @@ export class HomeComponent implements OnInit {
   ];
 
   public contactsLove: Array<CardNote> = [
-    {nom: 'friends', image: 'experiences/copains.jpg', route: 'reservation/confirmation/5?withFriends=true', note: 3},
-    {nom: 'zen', image: 'experiences/zen.jpg', route: 'reservation/resultat/experience/zen', note: 4},
-    {nom: 'ideation', image: 'experiences/creation.jpg', route: 'reservation/resultat/experience/ideation', note: 5},
-    {nom: 'focus', image: 'experiences/concentration.jpg', route: 'reservation/resultat/experience/focus', note: 2}
+    new CardNote('friends', 'experiences/copains.jpg', 'reservation/confirmation/5?withFriends=true', 3),
+    new CardNote('zen', 'experiences/copains.jpg', 'reservation/resultat/experience/zen', 4),
+    new CardNote('ideation', 'experiences/copains.jpg', 'reservation/resultat/experience/ideation', 5),
+    new CardNote('focus', 'experiences/copains.jpg', 'reservation/resultat/experience/focus', 2)
   ];
 
   public preferees(): Observable<Card[]> {
