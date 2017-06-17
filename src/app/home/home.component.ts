@@ -51,6 +51,14 @@ export class HomeComponent implements OnInit {
     {nom: 'meeting', image: 'experiences/reunir.jpg', route: 'reservation/resultat/experience/meeting'}
   ];
 
+
+    public preferees: Array<Card> = [
+    {nom: 'Tour Eiffel', image: 'vos-collegues-aiment/r-8-2.jpg', route: 'reservation/confirmation/2'},
+    {nom: 'Mont Saint Michel', image: 'vos-collegues-aiment/r-8-1.jpg', route: 'reservation/confirmation/1'},
+     {nom: 'Tour de Pise', image: 'vos-collegues-aiment/r-12-3.jpg', route: 'reservation/confirmation/3'}
+
+  ];
+
   public contactsLove: Array<CardNote> = [
     new CardNote('friends', 'experiences/copains.jpg', 'reservation/confirmation/5?withFriends=true', 3),
     new CardNote('zen', 'experiences/copains.jpg', 'reservation/resultat/experience/zen', 4),
@@ -58,7 +66,7 @@ export class HomeComponent implements OnInit {
     new CardNote('focus', 'experiences/copains.jpg', 'reservation/resultat/experience/focus', 2)
   ];
 
-  public preferees(): Observable<Card[]> {
+  public getPreferees(): Observable<Card[]> {
     return this.salleService.recupereLesSallesPreferePourUnUtilisateur('29')
       .map((snapshots) => {
         console.log(JSON.stringify(snapshots));
