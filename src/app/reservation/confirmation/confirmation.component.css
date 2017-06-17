@@ -2,3 +2,7 @@
 .btn-large.disabled {
   pointer-events: inherit;
 }
+
+.periode button {
+  width: 100%;
+}

@@ -4,16 +4,39 @@
   <description-salle [salle]="salle"></description-salle>
   <form>
 
+    <div class="row">
+      <div class="col s12">
+        <h3>When ?</h3>
+      </div>
+    </div>
+
+    <div class="row periode">
+    <div class="col s6">
+
+      <button class="waves-effect waves-light btn-large lighten-3"
+              [ngClass]="{'disabled':reservation.morning}"
+              (click)="reservation.morning = !reservation.morning"><i class="material-icons left">cloud</i>morning</button>
+    </div>
+    <div class="col s6">
+      <button class="waves-effect waves-light btn-large"
+              [ngClass]="{'disabled':reservation.afternoon}"
+              (click)="reservation.afternoon = !reservation.afternoon"><i class="material-icons right">cloud</i>afternoon</button>
+
+      </div>
+    </div>
 
     <div class="row">
       <div class="col s12">
+        <h3>Who will be there ?</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
 
-        <button class="waves-effect waves-light btn-largelighten-3"
-                [ngClass]=" {'disabled':reservation.morning}" (click)="reservation.morning = !reservation.morning"><i class="material-icons left">cloud</i>morning
-        </button>
-        <button class="waves-effect waves-light btn-large" [ngClass]="{'disabled':reservation.afternoon}"
-                (click)="reservation.afternoon = !reservation.afternoon"><i class="material-icons right">cloud</i>afternoon
-        </button>
+        <div class="chip" *ngFor="let copain of collegues">
+          <img src="https://randomuser.me/api/portraits/thumb/men/{{copain.id}}.jpg" alt="Contact Person">
+          {{copain.prenom}} {{copain.nom}}
+        </div>
 
       </div>
     </div>
@@ -21,11 +44,17 @@
 
     <div class="row">
       <div class="col s12">
+        <h3>Need something more ?</h3>
+      </div>
+    </div>
 
-        <div class="row" *ngFor="let facility of facilities">
-          <div class="col s2">
+  <div class="row">
+    <div class="col s12">
 
-            <div class="switch">
+      <div class="row" *ngFor="let facility of facilities">
+        <div class="col s2">
+
+        <div class="switch">
               <label>
                 Off
                 <input type="checkbox" [(ngModel)]="facility.reserve" name="{{facility.nom}} value={{facility.identifiant}}">
@@ -51,6 +80,18 @@
       <div class="col offset-s10 s2 right-align">
 
         <h2>{{total()}}</h2>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col offset-s10 s2 right-align">
+
+        <button class="waves-effect waves-light btn-large right-align"
+                routerLink="resultat"><i class="material-icons left">done</i>
+          Réserver
+        </button>
+
 
       </div>
     </div>

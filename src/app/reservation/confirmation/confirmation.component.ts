@@ -14,6 +14,12 @@ export class Reservation {
   public whoIsHere: Array<String> = [];
 }
 
+export class Amis {
+  public id: number;
+  public nom: String;
+  public prenom: String;
+}
+
 @Component({
   selector: 'app-confirmation',
   templateUrl: './confirmation.component.html',
@@ -49,7 +55,14 @@ export class ConfirmationComponent implements OnInit {
       prix: 20
       ,
       reserve: false
-    }];
+    },
+    {
+      identifiant: 9,
+      nom: "Food delivery",
+      prix: 15,
+      reserve: false
+    }
+    ];
 
 
   public salle: any = {
@@ -66,6 +79,19 @@ export class ConfirmationComponent implements OnInit {
   };
 
   public reservation: Reservation = new Reservation();
+
+  public collegues: Array<Amis> = [
+    {
+      id: 0,
+      nom: "Doe",
+      prenom: "John"
+    },
+    {
+      id: 1,
+      nom: "Samson",
+      prenom: "Christophe"
+    }
+  ];
 
   constructor() {
   }
