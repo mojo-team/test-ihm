@@ -27,6 +27,8 @@ import {SalleComponent} from "./reservation/salle/salle.component";
 import {CardSliderComponent} from "./home/card-slider/card-slider.component";
 import {NavbarComponent} from "./noyau/navbar/navbar.component";
 import { FooterComponent } from './noyau/footer/footer.component';
+import { EnteteSalleComponent } from './reservation/confirmation/entete-salle/entete-salle.component';
+import { DescriptionSalleComponent } from './reservation/confirmation/description-salle/description-salle.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCvjEn9dqAMZGbnCVa5lMBTVnLJzNbvdl8",
@@ -50,7 +52,9 @@ export const firebaseConfig = {
     SalleComponent,
     NavbarComponent,
     TestComponent,
-    FooterComponent
+    FooterComponent,
+    EnteteSalleComponent,
+    DescriptionSalleComponent
   ],
   imports: [
     BrowserModule,
