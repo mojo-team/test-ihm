@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {SalleService} from "../../service/salle-service";
 import {Salle} from "../../service/salle";
-import {Http, RequestOptions, Headers} from "@angular/http";
+import {Http} from "@angular/http";
 declare var $: any;
 
 export class Facility {
@@ -91,20 +91,22 @@ export class ConfirmationComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    this.salleService.recupererLaSalle(this.route.snapshot.params['salle'])
+    console.log(this.route.snapshot.params['salle']);
+    return this.salleService.recupererLaSalle(this.route.snapshot.params['salle'])
       .subscribe((salle) => {
         this.salle = salle;
       });
   }
 
   public done() {
-    window.location.href="/?notification=true"
+    window.location.href = "/?notification=true"
   }
 
 
-  public total(): Number {
-    return this.facilities.filter(facility => facility.reserve).reduce((total, element) => total + element.prix, 0) + this.salle.prix;
+  total() {
+    return this.facilities.filter(facility => {
+        return facility.reserve
+      }).reduce((total, element) => total + element.prix, 0) + this.salle.prix;
   }
 
 }

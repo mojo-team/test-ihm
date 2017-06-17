@@ -80,9 +80,9 @@
     </div>
 
     <div class="row">
-      <div class="col offset-s9 s3 right-align">
+      <div *ngIf="salle" class="col offset-s9 s3 right-align">
 
-        <h2>{{total()}} €</h2>
+        <h2>{{ total() }} €</h2>
 
       </div>
     </div>
