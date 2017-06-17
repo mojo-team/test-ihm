@@ -36,7 +36,7 @@ export class SalleService {
         orderByChild: 'experience',
         equalTo: experience
       }
-  }).map((snapshots)=>{return snapshots.orderByChild('notation').map((item)=>{this.recupererLaSalle(item.identifiantSalle)})});
+  }).map((snapshots)=>{return snapshots.orderByChild('notation')});
   }
 
   public recupereLesSallesPreferePourUnUtilisateur(idutilisateur: number): Observable<Salle[]> {
