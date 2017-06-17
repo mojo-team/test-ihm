@@ -1,5 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Card} from "./card";
+import {Router} from "@angular/router";
+
+export class Card {
+  constructor(public nom: String, public image: String, public route: String){
+  }
+}
 
 @Component({
   selector: 'card-slider',
@@ -10,14 +15,7 @@ export class CardSliderComponent implements OnInit {
 
   @Input() public cards: Array<Card>;
 
-  public swipeOptions: any;
-
-  constructor() {
-    this.swipeOptions = {
-      slidesPerView: 4,
-      loop: false,
-      spaceBetween: 5
-    };
+  constructor(public router: Router) {
   }
 
   ngOnInit() {  }

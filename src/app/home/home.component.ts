@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
+import {Card} from "./card-slider/card-slider.component";
 declare var $: any;
-import {Card} from "./card-slider/card";
 
 @Component({
   selector: 'home',
@@ -16,10 +16,10 @@ export class HomeComponent implements OnInit{
   }
 
   public experiences: Array<Card> = [
-    { nom: 'zen', image: 'experiences/zen.jpg' },
-    { nom: 'création', image: 'experiences/creation.jpg' },
-    { nom: 'copains', image: 'experiences/copains.jpg' },
-    { nom: 'concentration', image: 'experiences/concentration.jpg' }
+    { nom: 'zen', image: 'experiences/zen.jpg', route: 'reservation/resultat' },
+    { nom: 'création', image: 'experiences/creation.jpg', route: 'reservation/resultat' },
+    { nom: 'copains', image: 'experiences/copains.jpg', route: 'reservation/resultat/copains' },
+    { nom: 'concentration', image: 'experiences/concentration.jpg', route: 'reservation/resultat' }
   ];
 
 }
