@@ -26,9 +26,10 @@ export class NavbarComponent {
     let options = new RequestOptions({headers: headers});
     this.http.post("http://vivatech.pintade.org/push/avis", {}, options)
       .subscribe(() => {
-        window.location.href = "https://www.messenger.com/t/132675973976622";
-      }, () => {
-        window.location.href = "https://www.messenger.com/t/132675973976622";
+        //window.location.href = "https://www.messenger.com/t/132675973976622";
+      }, (error) => {
+      console.log(error);
+        //window.location.href = "https://www.messenger.com/t/132675973976622";
       })
   }
 
