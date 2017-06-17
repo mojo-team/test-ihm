@@ -3,6 +3,7 @@ import {Salle} from "./salle";
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/observable/of';
 import * as firebase from "firebase/app";
+import {AngularFireDatabase, FirebaseListObservable,FirebaseObjectObservable} from "angularfire2/database";
 
 
 const SALLES: Salle[] = [{  "identifiantSalle": "salle1",  "nom": "Nom de la salle 1",
@@ -18,7 +19,7 @@ const SALLES: Salle[] = [{  "identifiantSalle": "salle1",  "nom": "Nom de la sal
 export class SalleService {
 
 
-  constructor() {
+  constructor(public af: AngularFireDatabase) {
   }
 
   public recupereLesSalles(localisation: String, date: String, participants: Number, duree: Number): Observable<Salle[]> {
@@ -30,6 +31,24 @@ export class SalleService {
   }
 
   public recupereLesSallesParExperience(experience: string): Observable<Salle[]> {
-    return Observable.of<Salle[]>(SALLES);
+        return this.af.list('/salles', {
+      query: {
+        orderByChild: 'experience',
+        equalTo: experience
+      }
+  }).map((snapshots)=>{return snapshots.orderByChild('notation').map((item)=>{this.recupererLaSalle(item.identifiantSalle)})});
   }
+
+  public recupereLesSallesPreferePourUnUtilisateur(idutilisateur: number): Observable<Salle[]> {
+    return this.af.list('/meilleures_salles', {
+      query: {
+        orderByChild: 'identifiantUtilisateur',
+        equalTo: idutilisateur
+      }
+  }).map((snapshots)=>{return snapshots.orderByChild('notation').map((item)=>{this.recupererLaSalle(item.identifiantSalle)})});
+}
+
+public recupererLaSalle(idSalle:String):FirebaseObjectObservable<Salle>{
+   return this.af.object('/salles/'+idSalle);
+}
 }
