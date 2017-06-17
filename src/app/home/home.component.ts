@@ -21,10 +21,9 @@ export class HomeComponent implements OnInit {
 
   public experiences: Array<Card> = [
     { nom: 'zen', image: 'experiences/zen.jpg', route: 'reservation/resultat/experience/zen' },
-    { nom: 'création', image: 'experiences/creation.jpg', route: 'reservation/resultat/experience/creation' },
-    { nom: 'copains', image: 'experiences/copains.jpg', route: 'reservation/resultat/experience/copains' },
-    { nom: 'concentration', image: 'experiences/concentration.jpg', route: 'reservation/resultat/experiences/concentration' },
-    { nom: 'reunion', image: 'experiences/reunir.jpg', route: 'reservation/resultat/experience/reunir' }
+    { nom: 'ideation', image: 'experiences/creation.jpg', route: 'reservation/resultat/experience/ideation' },
+    { nom: 'focus', image: 'experiences/concentration.jpg', route: 'reservation/resultat/experience/focus' },
+    { nom: 'meeting', image: 'experiences/reunir.jpg', route: 'reservation/resultat/experience/meeting' }
   ];
 
 }
