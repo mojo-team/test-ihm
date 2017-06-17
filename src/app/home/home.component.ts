@@ -1,5 +1,9 @@
 import {Component, OnInit} from "@angular/core";
 import {Card} from "./card-slider/card-slider.component";
+import {Observable} from "rxjs/Observable";
+import {Salle} from "../service/salle";
+import {SalleService} from "../service/salle-service";
+import {AngularFireAuth} from "angularfire2/auth";
 declare var $: any;
 
 @Component({
@@ -9,7 +13,11 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
 
-  private localisation:string;
+  private localisation: string;
+
+  constructor(private salleService: SalleService, private auth: AngularFireAuth) {
+
+  }
 
   ngOnInit(): void {
     $('#date').pickadate({
@@ -20,10 +28,21 @@ export class HomeComponent implements OnInit {
   }
 
   public experiences: Array<Card> = [
-    { nom: 'zen', image: 'experiences/zen.jpg', route: 'reservation/resultat/experience/zen' },
-    { nom: 'ideation', image: 'experiences/creation.jpg', route: 'reservation/resultat/experience/ideation' },
-    { nom: 'focus', image: 'experiences/concentration.jpg', route: 'reservation/resultat/experience/focus' },
-    { nom: 'meeting', image: 'experiences/reunir.jpg', route: 'reservation/resultat/experience/meeting' }
+    {nom: 'friends', image: 'experiences/copains.jpg', route: 'reservation/confirmation/5'},
+    {nom: 'zen', image: 'experiences/zen.jpg', route: 'reservation/resultat/experience/zen'},
+    {nom: 'ideation', image: 'experiences/creation.jpg', route: 'reservation/resultat/experience/ideation'},
+    {nom: 'focus', image: 'experiences/concentration.jpg', route: 'reservation/resultat/experience/focus'},
+    {nom: 'meeting', image: 'experiences/reunir.jpg', route: 'reservation/resultat/experience/meeting'}
   ];
 
+  public preferees(): Observable<Card[]> {
+    return this.salleService.recupereLesSallesPreferePourUnUtilisateur(29)
+      .map((snapshots) => {
+        console.log(JSON.stringify(snapshots));
+      return snapshots.map((item) => {
+        console.log(JSON.stringify(item));
+        return new Card(item.nom,item.cheminPhoto,'reservation/confirmation/'+item.identifiantSalle);
+      })
+    });
+  };
 }
