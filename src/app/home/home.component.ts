@@ -59,10 +59,10 @@ export class HomeComponent implements OnInit {
   ];
 
   public contactsLove: Array<CardNote> = [
-    new CardNote('friends', 'experiences/copains.jpg', 'reservation/confirmation/5/true', 3),
-    new CardNote('zen', 'experiences/copains.jpg', 'reservation/resultat/experience/zen', 4),
-    new CardNote('ideation', 'experiences/copains.jpg', 'reservation/resultat/experience/ideation', 5),
-    new CardNote('focus', 'experiences/copains.jpg', 'reservation/resultat/experience/focus', 2)
+    new CardNote('Bordeaux St michel Sodexo', 'vos-collegues-aiment/c-1-2.jpg', 'reservation/confirmation/5/true', 3),
+    new CardNote('Coworking Bordeaux victoire', 'vos-collegues-aiment/c-1-3.jpg', 'reservation/resultat/experience/zen', 4),
+    new CardNote('Le lab Pôle emploi', 'vos-collegues-aiment/c-2-4.jpg', 'reservation/resultat/experience/ideation', 5),
+    new CardNote('Chez Arthur', 'vos-collegues-aiment/c-4-1.jpg', 'reservation/resultat/experience/focus', 2)
   ];
 
   public getPreferees(): Observable<Card[]> {
