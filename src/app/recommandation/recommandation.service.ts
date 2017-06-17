@@ -11,10 +11,11 @@ export class RecommandationService {
 
   constructor(public af: AngularFireDatabase) { }
 
-  public rechercherMeilleurSpot(vecteur:Array<any>):Observable<String>{
+  public rechercherMeilleurSpot(vecteur:Array<any>):Observable<any>{
     let  vecteurUtilisateurCible:Victor =Victor.fromArray(vecteur);
    let  vecteurRechercher: Victor;
     let  idSpot: String;
+    let  bureau: String;
    return this.af.list('/spots', {
       query: {
         orderByChild: 'islibre',
@@ -26,22 +27,30 @@ export class RecommandationService {
           if(vecteurRechercher === undefined){
             vecteurRechercher = Victor.fromArray(snapshot.affinite);
             idSpot = snapshot.$key;
+            bureau = snapshot.bureau;
           } else {
               if(vecteurUtilisateurCible.distance(Victor.fromArray(snapshot.affinite))<vecteurUtilisateurCible.distance(vecteurRechercher)){
                 vecteurRechercher = Victor.fromArray(snapshot.affinite);
                 idSpot = snapshot.$key;
+                bureau = snapshot.bureau;
               }
           }
         });
-      return idSpot;
+      return {'idSpot':idSpot,'bureau':bureau};
     });
-
-
-
-
-
-  
 };
+public rechercherUtilisateursDuBureau(bureau:String){
+  return this.af.list('/spots', {
+      query: {
+        orderByChild: 'bureau',
+        equalTo: bureau 
+      }
+  }).map((snapshot)=>{return snapshot.islibre===0})
+}
 
+public lireUtilisateur(idUtilisateur:number){
+
+     return this.af.object('/utilisateurs/'+idUtilisateur);
+}
 
 }

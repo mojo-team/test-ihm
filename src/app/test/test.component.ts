@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SalleService} from "../service/salle-service";
+import {RecommandationService} from '../recommandation/recommandation.service'
 
 @Component({
   selector: 'app-test',
@@ -8,10 +8,10 @@ import {SalleService} from "../service/salle-service";
 })
 export class TestComponent implements OnInit {
 
-  constructor(public rs :  SalleService) { }
+  constructor(public rs :  RecommandationService) { }
 
   ngOnInit() {
-    this.rs.recupereLesSallesParExperience('zen').subscribe((spot)=>{console.log(spot)});
+    this.rs.rechercherMeilleurSpot([0.4,0.5,0.7]).subscribe((spot)=>{console.log(spot.idSpot=','+'spot.bureau')});
   }
 
 }

@@ -28,7 +28,7 @@ export class SalleService {
     limitToLast: 10,
     orderByKey: true
       }
-  }).map((snapshots)=>{return snapshots.orderByChild('notation')});
+  }).map((snapshots)=>{return snapshots});
   }
 
   public recupereLesSallesRecommandeesPour(utilisateur: firebase.User): Observable<Salle[]> {
