@@ -23,7 +23,12 @@ export class SalleService {
   }
 
   public recupereLesSalles(localisation: String, date: String, participants: Number, duree: Number): Observable<Salle[]> {
-    return Observable.of<Salle[]>(SALLES);
+          return this.af.list('/salles', {
+      query: {
+    limitToLast: 10,
+    orderByKey: true
+      }
+  }).map((snapshots)=>{return snapshots.orderByChild('notation')});
   }
 
   public recupereLesSallesRecommandeesPour(utilisateur: firebase.User): Observable<Salle[]> {
