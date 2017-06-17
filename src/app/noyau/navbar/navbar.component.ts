@@ -24,11 +24,11 @@ export class NavbarComponent {
   public ouvrirLeBot() {
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
-    this.http.get("https://vivatech.pintade.org/pushavis", options)
+    this.http.get("https://vivatech.pintade.org/pushincident", options)
       .subscribe(() => {
         window.location.href = "https://www.messenger.com/t/132675973976622";
       }, (error) => {
-      console.log(error);
+        console.log(error);
         window.location.href = "https://www.messenger.com/t/132675973976622";
       })
   }
