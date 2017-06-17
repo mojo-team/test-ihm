@@ -2,18 +2,28 @@
   color: #1565c0 !important;
 }
 
-.recherche{
+.recherche {
   border: 1px solid lightgray;
-  border-radius: 5px;
+  border-radius: 2px;
 }
-.recherche-bordure{
+
+.recherche-bordure-padding {
   border-right: 1px solid lightgray;
+  padding-top: 10px;
 }
 
-.rechercher{
-  width:100%;
+.recherche-padding {
+  padding-top: 10px;
 }
 
-.modal-complete{
+.recherche-padding input, .recherche-bordure-padding input {
+  border-bottom: none;
+}
+
+.rechercher {
+  margin-top: 20px;
+}
+
+.modal-complete {
   max-height: 100%;
 }
