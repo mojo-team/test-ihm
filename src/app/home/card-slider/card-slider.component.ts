@@ -14,6 +14,7 @@ export class Card {
 export class CardSliderComponent implements OnInit {
 
   @Input() public cards: Array<Card>;
+  @Input() public titre: String;
 
   constructor(public router: Router) {
   }
