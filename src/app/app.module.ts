@@ -15,7 +15,9 @@ import {LoginComponent} from "./login/login.component";
 import {HomeComponent} from "./home/home.component";
 import {AuthGuard} from "./noyau/auth/AuthGuard";
 import {MapComponent} from "./map/map.component";
+import {TestComponent} from "./test/test.component";
 
+import {RecommandationService} from './recommandation/recommandation.service'
 import {MapService} from "./map/map.service";
 import {RetourLogin} from "./noyau/auth/RetourLogin";
 import {ResultatComponent} from "./reservation/resultat/resultat.component";
@@ -45,7 +47,8 @@ export const firebaseConfig = {
     ServicesComponent,
     ConfirmationComponent,
     SalleComponent,
-    NavbarComponent
+    NavbarComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthGuard,RetourLogin, MapService],
+  providers: [AuthGuard,RetourLogin, MapService,RecommandationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -8,6 +8,7 @@ import {ResultatComponent} from "./reservation/resultat/resultat.component";
 import {ServicesComponent} from "./reservation/services/services.component";
 import {SalleComponent} from "./reservation/salle/salle.component";
 import {ConfirmationComponent} from "./reservation/confirmation/confirmation.component";
+import {TestComponent} from "./test/test.component";
 
 const routes: Routes = [
   {
@@ -40,6 +41,11 @@ const routes: Routes = [
     component: ConfirmationComponent,
     path: 'reservation/confirmation',
     canActivate: [AuthGuard]
+  },
+   {
+    component: TestComponent,
+    path: 'test'
+
   }
 ];
 
