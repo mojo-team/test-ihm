@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SalleService} from "../service/salle-service";
+import {Salle} from "../service/salle";
 
 @Component({
   selector: 'app-test',
@@ -8,10 +9,20 @@ import {SalleService} from "../service/salle-service";
 })
 export class TestComponent implements OnInit {
 
-  constructor(public rs :  SalleService) { }
+
+  public salle: Salle;
+
+  constructor(public rs: SalleService) {
+  }
 
   ngOnInit() {
-    this.rs.recupereLesSallesPreferePourUnUtilisateur("29").subscribe((spot)=>{console.log(spot)});
+    return this.rs.recupererLaSalle('5').subscribe((salle) => {
+      this.salle = salle;
+    });
   }
+
+  public fuck() {
+    return JSON.stringify(this.salle);
+  };
 
 }
