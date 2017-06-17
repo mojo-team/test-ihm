@@ -6,6 +6,13 @@ export class Facility {
   public selected: boolean;
 }
 
+export class Reservation {
+  public morning: boolean = false;
+  public afternoon: boolean = false;
+  public facilities: Array<Facility> = [];
+  public whoIsHere: Array<String> = [];
+}
+
 @Component({
   selector: 'app-confirmation',
   templateUrl: './confirmation.component.html',
@@ -20,6 +27,21 @@ export class ConfirmationComponent implements OnInit {
     { name: 'hotesse', price: 500, selected: false }
   ];
 
+  public salle: any = {
+    "nom": "Mont Saint Michel",
+    "cheminPhoto": "/images/vos-collegues-aiment/r-8-1.jpg",
+    "prix": 100,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nisl magna, laoreet at mauris at, fermentum fringilla metus. Nam ut nisl id augue placerat sagittis.",
+    "notation": 4,
+    "nombrePlaces": 8,
+    "adresse": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "experience": "meeting",
+    "etage": 3,
+    "bureau": 301
+  };
+
+  public reservation: Reservation = new Reservation();
+
   constructor() { }
 
   ngOnInit() {
@@ -28,4 +50,5 @@ export class ConfirmationComponent implements OnInit {
   public total() : Number {
     return this.facilities.filter(facility => facility.selected).reduce((total, element) => total+element.price.valueOf(), 0);
   }
+
 }
