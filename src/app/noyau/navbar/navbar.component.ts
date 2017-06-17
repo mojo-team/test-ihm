@@ -16,6 +16,7 @@ export class NavbarComponent implements AfterViewInit {
       xfbml: true,
       version: "v2.6"
     });
+    FB.AppEvents.logPageView();
   }
 
 
