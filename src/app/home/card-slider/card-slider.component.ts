@@ -19,6 +19,7 @@ export class CardSliderComponent implements OnInit {
   constructor(public router: Router) {
   }
 
-  ngOnInit() {  }
+  ngOnInit() {
+  }
 
 }

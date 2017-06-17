@@ -8,7 +8,8 @@
     </div>
   </div>
 
-  <div class="row hide-on-med-and-down grey-text text-darken-2 recherche">
+  <!-- desktop -->
+  <div class="row hide-on-small-and-down grey-text text-darken-2 recherche">
     <div class="col m3 recherche-bordure">
       Localisation
       <input placeholder="Proche de moi" id="localisation" type="text" class="validate">
@@ -22,16 +23,55 @@
       <input placeholder="3 participants" id="participants" type="number" class="validate">
     </div>
     <div class="col m3">
-      Durée
+      Durée en heure
       <p class="range-field">
-        <input type="range" id="duree" min="0" max="48"/>
+        <input type="range" id="duree" min="0" max="48" value="2"/>
       </p>
     </div>
   </div>
-
-  <div class="row ">
+  <div class="row hide-on-med-and-down">
     <div class="col offset-l2 m8 indigo-text text-darken-4 center">
       <a class="waves-effect waves-light btn white-text blue rechercher" routerLink="reservation/resultat">Rechercher</a>
+    </div>
+  </div>
+  <!-- mobile -->
+  <div class="row hide-on-med-and-up">
+    <div class="col s12">
+      <div class="row">
+        <div class="col s12">
+          <button class="btn white grey-text darken-3" data-target="recherche_popup">
+            <i class="fa fa-search"></i>
+            Proche. Maintenant. 3 personnes. 2h
+          </button>
+        </div>
+      </div>
+      <div id="recherche_popup" class="modal modal-complete bottom-sheet">
+        <div class="modal-content">
+          <div class="row">
+            <div class="col s12">
+              Localisation
+              <input placeholder="Proche de moi" id="localisation_mobile" type="text" class="validate">
+            </div>
+            <div class="col s12">
+              Date
+              <input type="date" id="date_mobile" class="datepicker" placeholder="Maintenant">
+            </div>
+            <div class="col s12">
+              Nombre de participants
+              <input placeholder="3 participants" id="participants_mobile" type="number" class="validate">
+            </div>
+            <div class="col s12">
+              Durée
+              <p class="range-field">
+                <input type="range" id="duree_mobile" min="0" max="48" value="2"/>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer center">
+          <a href="#!" class="btn-flat modal-action modal-close waves-effect blue darken-3 white-text">Rechercher</a>
+        </div>
+      </div>
     </div>
   </div>
 

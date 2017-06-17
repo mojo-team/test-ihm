@@ -7,12 +7,13 @@ declare var $: any;
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   ngOnInit(): void {
     $('#date').pickadate({
       selectMonths: true, // Creates a dropdown to control month
       selectYears: 15 // Creates a dropdown of 15 years to control year
     });
+    $('#recherche_popup').modal();
   }
 
   public experiences: Array<Card> = [
