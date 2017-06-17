@@ -24,7 +24,7 @@ export class NavbarComponent {
   public ouvrirLeBot() {
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
-    this.http.post("http://vivatech.pintade.org/push/avis", {}, options)
+    this.http.post("https://vivatech.pintade.org/push/avis", {}, options)
       .subscribe(() => {
         //window.location.href = "https://www.messenger.com/t/132675973976622";
       }, (error) => {
