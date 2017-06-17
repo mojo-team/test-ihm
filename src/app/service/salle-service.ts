@@ -41,7 +41,7 @@ export class SalleService {
         orderByChild: 'experience',
         equalTo: experience
       }
-  }).map((snapshots)=>{return snapshots.orderByChild('notation')});
+  }).map((snapshots)=>{return snapshots});
   }
 
   public recupereLesSallesPreferePourUnUtilisateur(idutilisateur: number): Observable<Salle[]> {
@@ -50,7 +50,8 @@ export class SalleService {
         orderByChild: 'identifiantUtilisateur',
         equalTo: idutilisateur
       }
-  }).map((snapshots)=>{return snapshots.orderByChild('notation').map((item)=>{this.recupererLaSalle(item.identifiantSalle)})});
+  }).map((snapshots)=>
+  {return snapshots.map((item)=>{this.recupererLaSalle(item.identifiantSalle)})});
 }
 
 public recupererLaSalle(idSalle:String):FirebaseObjectObservable<Salle>{
