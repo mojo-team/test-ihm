@@ -28,6 +28,21 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    component: ResultatComponent,
+    path: 'reservation/resultat/user/:user',
+    canActivate: [AuthGuard]
+  },
+  {
+    component: ResultatComponent,
+    path: 'reservation/resultat/experience/:experience',
+    canActivate: [AuthGuard]
+  },
+  {
+    component: ResultatComponent,
+    path: 'reservation/resultat/localite/:localite/date/:date/participants/:participants/duree/:duree',
+    canActivate: [AuthGuard]
+  },
+  {
     component: ServicesComponent,
     path: 'reservation/services',
     canActivate: [AuthGuard]

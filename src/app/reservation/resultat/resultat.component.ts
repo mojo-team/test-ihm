@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
+import {Observable} from "rxjs/Observable";
 import {Salle} from "../../service/salle";
 import {SalleService} from "../../service/salle-service";
-import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-resultat',
@@ -9,12 +10,19 @@ import {Observable} from "rxjs/Observable";
   styleUrls: ['./resultat.component.css']
 })
 export class ResultatComponent implements OnInit {
- public salles: Array<Salle>;
-  constructor(public salleService:SalleService) { }
+
+  private salles: Observable<Salle[]>;
+
+  constructor(private route: ActivatedRoute, private salleService: SalleService) {
+  }
 
   ngOnInit() {
-    this.salleService.recupereLesSalles('paris',new Date(),5, 60).subscribe((salles)=>{
-    this.salles = salles });
+    const localite = this.route.snapshot.params["localite"];
+    const date = this.route.snapshot.params["date"];
+    const attendees = this.route.snapshot.params["attendees"];
+    const duree = this.route.snapshot.params["duree"];
+
+    this.salles = this.salleService.recupereLesSalles(localite, date, attendees, duree);
   }
 
 }

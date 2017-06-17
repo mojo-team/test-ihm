@@ -8,6 +8,9 @@ declare var $: any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  private localisation:string;
+
   ngOnInit(): void {
     $('#date').pickadate({
       selectMonths: true, // Creates a dropdown to control month

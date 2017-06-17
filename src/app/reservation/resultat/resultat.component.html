@@ -1,19 +1,19 @@
 <navbar></navbar>
-<div *ngFor="let salle of salles" class="container">
+<div *ngFor="let salle of salles | async" class="container">
       <div class="row">
         <div class="col s12 m7">
           <div class="card">
             <div class="card-image">
-              <img src="assets/images/{{cheminPhoto}}">
+              <img src="assets/images/{{salle.cheminPhoto}}">
               <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
-              <p>{{description}}</p>
+              <p>{{salle.description}}</p>
             </div>
             <div class="card-action">
               <a href="#">This is a link</a>
             </div>
           </div>
         </div>
-      </div>            
+      </div>
 </div>
