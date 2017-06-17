@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col s12">
-    <description-salle [salle]="salle"></description-salle>
+      <description-salle [salle]="salle"></description-salle>
     </div>
   </div>
 
@@ -19,56 +19,52 @@
   <form>
 
 
+    <div class="row">
+      <div class="col s12">
 
-  <div class="row">
-    <div class="col s12">
+      <button class="waves-effect waves-light btn-largelighten-3"
+              [ngClass]=" {'disabled':reservation.morning}" (click)="reservation.morning = !reservation.morning"><i class="material-icons left">cloud</i>morning</button>
+      <button class="waves-effect waves-light btn-large" [ngClass]="{'disabled':reservation.afternoon}" (click)="reservation.afternoon = !reservation.afternoon"><i class="material-icons right">cloud</i>afternoon</button>
 
-      <button class="waves-effect waves-light btn-large lighten-3"
-              [ngClass]="{'disabled':reservation.morning}"
-              (click)="reservation.morning = !reservation.morning"><i class="material-icons left">cloud</i>morning</button>
-      <button class="waves-effect waves-light btn-large"
-              [ngClass]="{'disabled':reservation.afternoon}"
-              (click)="reservation.afternoon = !reservation.afternoon"><i class="material-icons right">cloud</i>afternoon</button>
-
+      </div>
     </div>
-  </div>
 
 
-  <div class="row">
-    <div class="col s12">
+    <div class="row">
+      <div class="col s12">
 
-      <div class="row" *ngFor="let facility of facilities">
-        <div class="col s2">
+        <div class="row" *ngFor="let facility of facilities">
+          <div class="col s2">
 
-          <div class="switch">
-            <label>
-              Off
-              <input type="checkbox" [(ngModel)]="facility.reserve" name="{{facility.nom}} value={{facility.identifiant}}">
-              <span class="lever"></span>
-              On
-            </label>
+            <div class="switch">
+              <label>
+                Off
+                <input type="checkbox" [(ngModel)]="facility.reserve" name="{{facility.nom}} value={{facility.identifiant}}">
+                <span class="lever"></span>
+                On
+              </label>
+            </div>
+
+          </div>
+          <div class="col s8">
+            {{facility.nom}}
+          </div>
+          <div class="col s2 right-align">
+            {{facility.prix}}
           </div>
 
         </div>
-        <div class="col s8">
-          {{facility.nom}}
-        </div>
-        <div class="col s2 right-align">
-           {{facility.prix}}
-        </div>
 
       </div>
+    </div>
+
+    <div class="row">
+      <div class="col offset-s10 s2 right-align">
+
+        <h2>{{total()}}</h2>
 
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col offset-s10 s2 right-align">
-
-      <h2>{{total()}}</h2>
-
-    </div>
-  </div>
+    </div >
 
   </form>
 
